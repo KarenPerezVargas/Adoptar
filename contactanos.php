@@ -88,7 +88,11 @@
       
                   <div class="row" style="margin-top: 3rem;">
                       <div class="col-auto">
+<<<<<<< HEAD
                         <label for="exampleInputEmail1" class="col-form-label">E - MAIL</label>
+=======
+                        <label for="exampleInputEmail1" class="col-form-label">Correo electronico</label>
+>>>>>>> dfb2d3bab45dfa5eadda77a882cd60c157fd3b96
                       </div>
                       <div class="col-auto">
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required name="correo">
@@ -117,8 +121,13 @@
                     <div class="row" style="margin-top: 5rem;">
                       <div class="col-auto">
                         <label for="" class="col-form-label">¿Qué mascota desea adoptar?</label>
+<<<<<<< HEAD
                       
                         <div class="row" style="margin-left: 17rem; margin-top: 2rem;">
+=======
+
+
+>>>>>>> dfb2d3bab45dfa5eadda77a882cd60c157fd3b96
                         <?php
                             $conexion = mysqli_connect('localhost', 'root', '', 'adoptame');
                             $consulta = 'SELECT * FROM mascotas';
@@ -133,10 +142,54 @@
                           $conexion -> close();
                         ?>
                         </select>
+<<<<<<< HEAD
                         </div>
 
                       </div>
                     </div>    
+=======
+
+
+                      </div>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Perros
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Gatos
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Cerdos
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Conejos
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Caballos
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Aves
+                      </label>
+                    </div>
+>>>>>>> dfb2d3bab45dfa5eadda77a882cd60c157fd3b96
                   </div>
 
                   <div>
@@ -145,11 +198,19 @@
                         <label for="inputPassword6" class="col-form-label">Cantidad de mascotas:</label>
                       </div> 
                       <div class="col-auto">
+<<<<<<< HEAD
                         <input type="number" id="" class="form-control" aria-describedby="" style="margin-left: 3rem; margin-top: 1rem;"  name="txtcantidad" required name="txtcantidad">
                       </div>     
                   </div>
                 </div> 
                 <div class="boton" style="text-align: center; margin-top: 5rem;">
+=======
+                        <input type="number" id="" class="form-control" aria-describedby="" style="margin-left: 3rem; margin-top: 1rem;"  name="txtcantidad">
+                      </div>     
+                  </div>
+                </div> 
+                <div class="boton" style="text-align: center;">
+>>>>>>> dfb2d3bab45dfa5eadda77a882cd60c157fd3b96
                   <button type="submit" class="btn btn-light">ENVIAR</button>
                 </div>
               </form>
