@@ -73,25 +73,25 @@
                         <label for="" class="col-form-label">Nombres</label>
                       </div>
                       <div class="col-auto">
-                        <input type="text" id="" class="form-control" aria-describedby="" required>
+                        <input type="text" id="" class="form-control" aria-describedby="" required name="txtnombres">
                       </div>
                   </div>
 
                   <div class="row" style="margin-top: 2rem;">
                     <div class="col-auto">
-                      <label for="inputPassword6" class="col-form-label" >Apellidos</label>
+                      <label for="" class="col-form-label" >Apellidos</label>
                     </div>
                     <div class="col-auto">
-                      <input type="text" id="" class="form-control" aria-describedby="" required>
+                      <input type="text" id="" class="form-control" aria-describedby="" required name="txtapellidos">
                     </div>
                 </div>
       
                   <div class="row" style="margin-top: 2rem;">
                       <div class="col-auto">
-                        <label for="inputPassword6" class="col-form-label" >Password</label>
+                        <label for="exampleInputEmail1" class="col-form-label">Correo electronico</label>
                       </div>
                       <div class="col-auto">
-                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required name="correo">
                       </div>
                   </div>
                   
@@ -100,7 +100,7 @@
                         <label for="" class="col-form-label">N° Celular</label>
                       </div>
                       <div class="col-auto">
-                        <input type="text" id="" class="form-control" aria-describedby="" required>
+                        <input type="text" id="" class="form-control" aria-describedby="" required name="txtcelular">
                       </div>
                   </div>
 
@@ -109,7 +109,7 @@
                       <label for="" class="col-form-label">Dirección</label>
                     </div>
                     <div class="col-auto">
-                      <input type="text" id="" class="form-control" aria-describedby="" required>
+                      <input type="text" id="" class="form-control" aria-describedby="" required name="txtdireccion">
                     </div>
                   </div>
 
@@ -117,8 +117,27 @@
                     <div class="row" style="margin-top: 3rem;">
                       <div class="col-auto">
                         <label for="" class="col-form-label">¿Qué mascota desea adoptar?</label>
+
+
+                        <?php
+                            $conexion = mysqli_connect('localhost', 'root', '', 'adoptame');
+                            $consulta = 'SELECT * FROM mascotas';
+                            $resultado = $conexion -> query($consulta);
+                        ?>
+
+                        <select id="disabledSelect" class="form-select" name="cboidmascotas">
+                        <?php
+                            while($row=mysqli_fetch_row($resultado)){
+                            echo '<option value='.$row[0].'>'.$row[1].'</option>';
+                            }
+                          $conexion -> close();
+                        ?>
+                        </select>
+
+
                       </div>
                     </div>
+
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                       <label class="form-check-label" for="flexCheckDefault">
@@ -162,12 +181,12 @@
                         <label for="inputPassword6" class="col-form-label">Cantidad de mascotas:</label>
                       </div> 
                       <div class="col-auto">
-                        <input type="number" id="" class="form-control" aria-describedby="" style="margin-left: 5rem; margin-top: 1rem;" required>
+                        <input type="number" id="" class="form-control" aria-describedby="" style="margin-left: 3rem; margin-top: 1rem;"  name="txtcantidad">
                       </div>     
                   </div>
                 </div> 
                 <div class="boton" style="text-align: center;">
-                  <button type="button" class="btn btn-light">ENVIAR</button>
+                  <button type="submit" class="btn btn-light">ENVIAR</button>
                 </div>
               </form>
             </div>    
