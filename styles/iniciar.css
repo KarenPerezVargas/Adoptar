@@ -15,12 +15,15 @@
 
 h1{
     color: aliceblue;
-    margin-top: 2rem;
+    margin-top: 4rem;
     margin-left: 3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-button{
-    margin-top: 3rem;
-    text-align: right;
+.form-control{
+    margin-left: 1rem;
+}
+
+select{
+    margin-left: 20rem;
 }

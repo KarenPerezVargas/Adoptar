@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>adopta.com</title>
+        <title>contactaME</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="./styles/iniciar.css">
@@ -32,13 +32,13 @@
                         </a>
                       </li>
                       <li>
-                        <a href="./index.html" class="nav-link text-secondary">
+                        <a href="./contactanos.php" class="nav-link text-secondary">
                           <svg class="bi d-block mx-auto mb-1" width="24" height="0"><use xlink:href="#home"/></svg>
                           Contáctanos
                         </a>
                       </li>
                       <li>
-                        <a href="./index.html" class="nav-link text-secondary">
+                        <a href="./ubicacion.html" class="nav-link text-secondary">
                           <svg class="bi d-block mx-auto mb-1" width="24" height="0"><use xlink:href="#home"/></svg>
                           Ubicación
                         </a>
@@ -68,106 +68,89 @@
               <h1>Registrate:</h1>
               <form action="" style="margin-top: 3rem;">
       
-                  <div class="row" style="margin-top: 2rem;">
+                  <div class="row" style="margin-top: 3rem;">
                       <div class="col-auto">
                         <label for="" class="col-form-label">Nombres</label>
                       </div>
                       <div class="col-auto">
-                        <input type="text" id="" class="form-control" aria-describedby="" required>
+                        <input type="text" id="" class="form-control" aria-describedby="" required name="txtnombres">
                       </div>
                   </div>
 
-                  <div class="row" style="margin-top: 2rem;">
+                  <div class="row" style="margin-top: 3rem;">
                     <div class="col-auto">
-                      <label for="inputPassword6" class="col-form-label" >Apellidos</label>
+                      <label for="" class="col-form-label" >Apellidos</label>
                     </div>
                     <div class="col-auto">
-                      <input type="text" id="" class="form-control" aria-describedby="" required>
+                      <input type="text" id="" class="form-control" aria-describedby="" required name="txtapellidos">
                     </div>
                 </div>
       
-                  <div class="row" style="margin-top: 2rem;">
+                  <div class="row" style="margin-top: 3rem;">
                       <div class="col-auto">
-                        <label for="inputPassword6" class="col-form-label" >Password</label>
+                        <label for="exampleInputEmail1" class="col-form-label">E - MAIL</label>
                       </div>
                       <div class="col-auto">
-                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required name="correo">
                       </div>
                   </div>
                   
-                  <div class="row" style="margin-top: 2rem;">
+                  <div class="row" style="margin-top: 3rem;">
                       <div class="col-auto">
                         <label for="" class="col-form-label">N° Celular</label>
                       </div>
                       <div class="col-auto">
-                        <input type="text" id="" class="form-control" aria-describedby="" required>
+                        <input type="text" id="" class="form-control" aria-describedby="" required name="txtcelular">
                       </div>
                   </div>
 
-                  <div class="row" style="margin-top: 2rem;">
+                  <div class="row" style="margin-top: 3rem;">
                     <div class="col-auto">
                       <label for="" class="col-form-label">Dirección</label>
                     </div>
                     <div class="col-auto">
-                      <input type="text" id="" class="form-control" aria-describedby="" required>
+                      <input type="text" id="" class="form-control" aria-describedby="" required name="txtdireccion">
                     </div>
                   </div>
 
                   <div>
-                    <div class="row" style="margin-top: 3rem;">
+                    <div class="row" style="margin-top: 5rem;">
                       <div class="col-auto">
                         <label for="" class="col-form-label">¿Qué mascota desea adoptar?</label>
+                      
+                        <div class="row" style="margin-left: 17rem; margin-top: 2rem;">
+                        <?php
+                            $conexion = mysqli_connect('localhost', 'root', '', 'adoptame');
+                            $consulta = 'SELECT * FROM mascotas';
+                            $resultado = $conexion -> query($consulta);
+                        ?>
+
+                        <select id="disabledSelect" class="form-select" name="cboidmascotas">
+                        <?php
+                            while($row=mysqli_fetch_row($resultado)){
+                            echo '<option value='.$row[0].'>'.$row[1].'</option>';
+                            }
+                          $conexion -> close();
+                        ?>
+                        </select>
+                        </div>
+
                       </div>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Perros
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Gatos
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Cerdos
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Conejos
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Caballos
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Aves
-                      </label>
-                    </div>
+                    </div>    
                   </div>
+
                   <div>
-                    <div class="row" style="margin-top: 3rem;">
+                    <div class="row" style="margin-top: 5rem;">
                       <div class="col-auto">
                         <label for="inputPassword6" class="col-form-label">Cantidad de mascotas:</label>
                       </div> 
                       <div class="col-auto">
-                        <input type="number" id="" class="form-control" aria-describedby="" style="margin-left: 5rem; margin-top: 1rem;" required>
+                        <input type="number" id="" class="form-control" aria-describedby="" style="margin-left: 3rem; margin-top: 1rem;"  name="txtcantidad" required name="txtcantidad">
                       </div>     
                   </div>
                 </div> 
-                <div class="boton" style="text-align: center;">
-                  <button type="button" class="btn btn-light">ENVIAR</button>
+                <div class="boton" style="text-align: center; margin-top: 5rem;">
+                  <button type="submit" class="btn btn-light">ENVIAR</button>
                 </div>
               </form>
             </div>    
